@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>peteral.test.build</groupId>
 		<artifactId>option</artifactId>
-		<version>0.0.3</version>
+		<version>0.0.4-SNAPSHOT</version>
 	</parent>
 	<packaging>war</packaging>
 	<artifactId>option-war</artifactId>
