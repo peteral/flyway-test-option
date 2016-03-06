@@ -6,6 +6,7 @@
 		<artifactId>option</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<packaging>war</packaging>
 	<artifactId>option-war</artifactId>
 
 	<build>
@@ -45,5 +46,34 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-	<packaging>war</packaging>
+	
+	<profiles>
+		<profile>
+			<id>setup</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>wagon-maven-plugin</artifactId>
+						<version>1.0</version>
+						<executions>
+							<execution>
+								<id>upload-jar-to-folder</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>upload</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<fromDir>${project.build.directory}</fromDir>
+							<includes>option-war.war</includes>
+							<url>file:///c:/</url>
+							<toDir>Develop/atlassian-wsp/Setup</toDir>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
