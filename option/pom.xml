@@ -9,30 +9,57 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<version.platform>0.0.1-SNAPSHOT</version.platform>
+		<version.plugin.wildfly>1.1.0.Alpha7</version.plugin.wildfly>
+		<version.junit>4.12</version.junit>
+		<version.javaee-api>7.0</version.javaee-api>
 	</properties>
-	
-	<repositories>
-		<repository>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>Nexus local</id>
-			<url>http://localhost:8081/nexus/content/groups/public</url>
-			<layout>default</layout>
-		</repository>
-	</repositories>
-	
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${version.junit}</version>
+		</dependency>
+	</dependencies>
+
 	<distributionManagement>
 		<repository>
 			<uniqueVersion>false</uniqueVersion>
-			<id>nexus</id>
+			<id>nexus-releases</id>
 			<name>Local nexus</name>
 			<url>http://localhost:8081/nexus/content/repositories/releases</url>
 		</repository>
+		<snapshotRepository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>nexus-snapshots</id>
+			<name>Local nexus</name>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
+
+	<scm>
+		<developerConnection>scm:git:ssh://git@localhost:7999/buil/option.git</developerConnection>
+	</scm>
+	
+	<modules>
+		<module>option-war</module>
+	</modules>
 </project>

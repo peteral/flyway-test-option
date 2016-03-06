@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to option</title>
+<script src="jquery-2.2.1.js"></script>
+</head>
+<body>
+<input type="text" value="message" id="message">
+<input type="button" value="journal" id="journal">
+<div id="result">
+</div>
+
+<script>
+$(document).ready (function() {
+	$("#journal").click(function() {
+		var data = { 
+				message : $("#message").val() 
+				}
+		$.post("rest/journal", data, function(data, status) {
+			$("#result").html(status)
+		})
+	})
+})
+</script>
+</body>
+</html>

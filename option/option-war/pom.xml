@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>peteral.test.build</groupId>
+		<artifactId>option</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>option-war</artifactId>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>${version.plugin.wildfly}</version>
+				<configuration>
+					<hostname>${wildfly-hostname}</hostname>
+					<port>${wildfly-port}</port>
+					<id>wildfly</id>
+					<protocol>http-remoting</protocol>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>peteral.test.build</groupId>
+			<artifactId>platform-api</artifactId>
+			<version>${version.platform}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${version.javaee-api}</version>
+		</dependency>
+	</dependencies>
+	<packaging>war</packaging>
+</project>
