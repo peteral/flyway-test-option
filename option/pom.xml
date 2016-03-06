@@ -38,11 +38,13 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${version.junit}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>${version.mockito-core}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
