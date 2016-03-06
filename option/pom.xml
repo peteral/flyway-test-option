@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>peteral.test.build</groupId>
 	<artifactId>option</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.4</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -70,7 +70,7 @@
 
 	<scm>
 		<developerConnection>scm:git:ssh://git@localhost:7999/buil/option.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>releases/0.0.4</tag>
   </scm>
 
 	<modules>
