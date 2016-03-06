@@ -25,12 +25,18 @@
 
 		</plugins>
 	</build>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>peteral.test.build</groupId>
 			<artifactId>platform-api</artifactId>
 			<version>${version.platform}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.eclipsesource.jaxrs</groupId>
+			<artifactId>jersey-all</artifactId>
+			<version>2.22.2</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax</groupId>

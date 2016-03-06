@@ -13,7 +13,7 @@ import peteral.test.build.platformapi.Journal;
 @Path("journal")
 public class JournalService {
 	@EJB(lookup = Journal.LOOKUP)
-	private Journal journal;
+	Journal journal;
 	
 	@POST
 	public Response log(@FormParam("message")String message) {
