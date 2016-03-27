@@ -24,6 +24,6 @@ public class JournalServiceTest {
 	public void log_any_returns_ok() throws Exception {
 		JournalService journalService = new JournalService();
 		journalService.journal = journal;
-		assertEquals(HttpServletResponse.SC_OK, journalService.log("").getStatus());
+		assertEquals(HttpServletResponse.SC_OK, journalService.log("", "").getStatus());
 	}
 }

@@ -16,8 +16,11 @@ public class JournalService {
 	Journal journal;
 	
 	@POST
-	public Response log(@FormParam("message")String message) {
-		journal.log(message);
+	public Response log(@FormParam("message")String message, @FormParam("parameter") String parameter) {
+		if (parameter != null)
+			journal.log(message, parameter.split("\\,"));
+		else
+			journal.log(message);
 		
 		return Response.ok().build();
 	}

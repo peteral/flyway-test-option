@@ -8,6 +8,7 @@
 <body>
 <h1>Enter message:</h1>
 <input type="text" value="message" id="message">
+<input type="text" value="param1, param2" id="parameter">
 <input type="button" value="journal" id="journal">
 <div id="result">
 </div>
@@ -16,7 +17,8 @@
 $(document).ready (function() {
 	$("#journal").click(function() {
 		var data = { 
-				message : $("#message").val() 
+				message : $("#message").val(),
+				parameter : $("#parameter").val() 
 				}
 		$.post("rest/journal", data, function(data, status) {
 			$("#result").html(status)
