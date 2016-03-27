@@ -16,6 +16,8 @@
 <script>
 $(document).ready (function() {
 	$("#journal").click(function() {
+		$("#result").html("")
+		
 		var data = { 
 				message : $("#message").val(),
 				parameter : $("#parameter").val() 
