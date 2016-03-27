@@ -1,0 +1,10 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	<persistence-unit name="PU">
+		<jta-data-source>java:/jdbc/oracle</jta-data-source>
+		<class>peteral.test.build.option.entities.RequestLogEntity</class>
+	</persistence-unit>
+</persistence>
